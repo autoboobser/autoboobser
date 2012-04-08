@@ -5,7 +5,7 @@
 		"128": "icon-128.png", 
 		"48": "icon-48.png"
 	},
-	"description": "A part of autoboobser plugin to make cross-domain XMLHTTP request from browser",
+	"description": "A part of autoboobser project to make cross-domain XMLHTTP request from browser",
 	"homepage_url": "http://autoboobser.com",
 	"background": {
 		"page": "background.html"
@@ -22,8 +22,6 @@
 		}
 	], 
 	"permissions": [
-		"http://*.google.*/*",
-		"https://*.google.*/*",
-		"unlimitedStorage"
+		"http://*/*"
 	]
 }
