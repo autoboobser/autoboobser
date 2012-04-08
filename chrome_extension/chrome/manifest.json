@@ -1,0 +1,26 @@
+{
+	"background": {
+		"page": "background.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"http://autoboobser.com/*",
+				"http://autoboobster.com/*"				
+			], 
+			"js": [
+				"contentscript.js"
+			]
+		}
+	], 
+	"name": "Test", 
+	"icons": {
+		"128": "icon-128.png", 
+		"48": "icon-48.png"
+	}, 
+	"description": "", 
+	"version": "0.0.1", 
+	"permissions": [
+		"http://*/"		
+	]
+}
