@@ -1,26 +1,29 @@
 {
+	"name": "AutoBoobser plugin",
+	"version": "0.0.1",
+	"icons": {
+		"128": "icon-128.png", 
+		"48": "icon-48.png"
+	},
+	"description": "A part of autoboobser plugin to make cross-domain XMLHTTP request from browser",
+	"homepage_url": "http://autoboobser.com",
 	"background": {
 		"page": "background.html"
 	},
 	"content_scripts": [
 		{
-			"matches": [
-				"http://autoboobser.com/*",
-				"http://autoboobster.com/*"				
+			"matches": [ 
+				"http://autoboobser.com/*", 
+				"http://autoboobster.com/*"
 			], 
-			"js": [
-				"contentscript.js"
+			"js": [	
+				"contentscript.js" 
 			]
 		}
 	], 
-	"name": "Test", 
-	"icons": {
-		"128": "icon-128.png", 
-		"48": "icon-48.png"
-	}, 
-	"description": "", 
-	"version": "0.0.1", 
 	"permissions": [
-		"http://*/"		
+		"http://*.google.*/*",
+		"https://*.google.*/*",
+		"unlimitedStorage"
 	]
 }
