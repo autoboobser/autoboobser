@@ -22,6 +22,9 @@
 		}
 	], 
 	"permissions": [
-		"http://*/*"
+		"http://*.yandex.ru/*",
+		"https://*.yandex.ru/*",
+		"http://*.google.com/*",
+		"https://*.google.com/*"
 	]
 }
