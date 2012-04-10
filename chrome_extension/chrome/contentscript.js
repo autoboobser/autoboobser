@@ -44,14 +44,15 @@
 		respose.value = 'request';
 		request.style.display = 'none';
 		document.body.appendChild(request);
-		request.onclick = function(){
+		request.addEventListener("click", function(){
 			var data = area.innerText;
 			posterXHR.xhr(data, function(res){
-				if(res)	area.innerText = res;
-				else area.innerText = "";
+				res = res.substr(res.indexOf("<body>") + 6);
+				if(res)	area.value = res;
+				else area.value = "";
 				respose.click();
 			});
-		}
+		}, false);
 	}	
 })();
 
