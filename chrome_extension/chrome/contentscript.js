@@ -1,4 +1,3 @@
-
 (function(){
 	// DOM constants
 	var TEXTAREA_ID = 'sndrcv';
@@ -46,10 +45,10 @@
 		document.body.appendChild(request);
 		request.addEventListener("click", function(){
 			var data = area.value;
-			posterXHR.xhr(data, function(res){
-				res = res.substr(res.indexOf("<body>") + 6);
+			posterXHR.xhr(data, function(res) {
 				if(res)	area.value = res;
 				else area.value = "";
+				// Send response
 				respose.click();
 			});
 		}, false);
