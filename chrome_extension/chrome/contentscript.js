@@ -1,4 +1,3 @@
-
 (function(){
 	// DOM constants
 	var TEXTAREA_ID = 'sndrcv';
