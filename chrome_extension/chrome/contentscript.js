@@ -9,7 +9,7 @@
 	var posterXHR = {
 		xhr : function (url, callback){
 			try{
-				chrome.extension.sendRequest({ 'type': 'xhr', 'term': url }, function(response) {
+				chrome['extension']['sendRequest']({ 'type': 'xhr', 'term': url }, function(response) {
 					callback(response.result);
 			});
 			} catch(e) {
@@ -45,7 +45,7 @@
 		request.style.display = 'none';
 		document.body.appendChild(request);
 		request.addEventListener("click", function(){
-			var data = area.innerText;
+			var data = area.value;
 			posterXHR.xhr(data, function(res){
 				res = res.substr(res.indexOf("<body>") + 6);
 				if(res)	area.value = res;

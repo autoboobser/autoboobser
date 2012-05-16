@@ -160,7 +160,7 @@ class ChromeExtensionBuilder(ExtensionBuilder):
 	def pack(self):
 		chrome_path = self.get_chrome_path()
 		if(chrome_path != ''):
-			src = os.path.join(sys.path[0], "chrome")
+			src = os.path.join(sys.path[0], "tmp")
 			out = os.path.join(sys.path[0], "output\\chrome.crx")
 			extension_path = os.path.abspath(src)
 			certificate_path = os.path.join(sys.path[0], "certificates/chrome.pem")
@@ -171,7 +171,7 @@ class ChromeExtensionBuilder(ExtensionBuilder):
 			cmd += ' --no-message-box'
 			os.system(cmd)
 			try:
-				crxFile = sys.path[0] + '\\chrome.crx'
+				crxFile = sys.path[0] + '\\tmp.crx'
 				if os.path.exists(out):
 					os.remove(out)
 					
