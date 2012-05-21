@@ -1,5 +1,6 @@
 (function(){
 	// DOM constants
+	var IS_DEBUG = false;
 	var TEXTAREA_ID = 'sndrcv';
 	var REQUEST_ID = 'send_request';
 	var RESPONSE_ID = 'pass_request';
@@ -12,7 +13,10 @@
 					callback(response.result);
 			});
 			} catch(e) {
-				console.log('Chrome extension: ' + e.message);
+				if(IS_DEBUG) {
+					console.log('Chrome extension XHR error: ' + e.message);
+					callback(0);
+				}
 			}
 		}
 	};
@@ -44,8 +48,17 @@
 		request.style.display = 'none';
 		document.body.appendChild(request);
 		request.addEventListener("click", function(){
+		
 			var data = area.value;
+			if(IS_DEBUG) {
+				console.log("Request called with data: " + data);
+			}
+			
 			posterXHR.xhr(data, function(res) {
+				if(IS_DEBUG) {
+					console.log("XHR Return value: " + res);
+				}
+			
 				if(res)	area.value = res;
 				else area.value = "";
 				// Send response
